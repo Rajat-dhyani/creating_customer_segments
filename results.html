@@ -12125,7 +12125,105 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong> The three establishment could be as following</p>
-<ul>
+<table>
+    <thead>
+        <tr>
+            <th colspan=9 style="text-align: center;"> Guessing Customers enstablishments</th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr>
+            <td><strong> Feature </strong> </td>
+            <td><strong > Mean</strong> </td>
+            <td><strong> STD</strong> </td>
+            <td colspan = 2 style="text-align: center;"><strong> Customer 0 </strong> </td>
+            <td colspan = 2 style="text-align: center;"><strong> Customer 1 </strong> </td>
+            <td colspan = 2 style="text-align: center;"><strong> Customer 2 </strong> </td>
+        </tr>
+        <tr>
+            <td colspan = 3 >------------------------------------------------------------------</td>
+            <td>Value</td>
+            <td>Inference</td>
+            <td>Value</td>
+            <td>Inference</td>
+            <td>Value</td>
+            <td>Inference</td>
+        </tr>
+        <tr>
+            <td><strong> Fresh </strong></td>
+            <td>12000.297727</td>
+            <td>12647.328865</td>
+            <td> 12669 </td>
+            <td> higher than average and std</td>
+            <td> 7057 </td>
+            <td> lower than average and std</td>
+            <td> 6353 </td>
+            <td> lower than average and std</td>
+        </tr>
+         <tr>
+            <td><strong> Milk </strong></td>
+            <td>5796.265909</td>
+            <td>7380.377175</td>
+            <td> 9656 </td>
+            <td> higher than average and std</td>
+            <td> 9810 </td>
+            <td> higher than average and std </td>
+            <td> 8808 </td>
+            <td> higher than average and std</td>
+        </tr>
+        <tr>
+            <td><strong> Grocery </strong></td>
+            <td>7951.27727</td>
+            <td>9503.162829</td>
+            <td> 7561 </td>
+            <td> lower than average and std</td>
+            <td> 9568 </td>
+            <td> higher than average and std </td>
+            <td> 7684 </td>
+            <td> lower than std but higher than average</td>
+        </tr>
+        <tr>
+            <td><strong> Frozen </strong></td>
+            <td>3071.931818 </td>
+            <td>4854.673333</td>
+            <td> 214     </td>
+            <td> lower than average and std</td>
+            <td> 1762 </td>
+            <td> lower than average and std </td>
+            <td> 2405</td>
+            <td> lower than std and average</td>
+        </tr>
+        <tr>
+            <td><strong> Detergents_Paper </strong></td>
+            <td>2881.493182 </td>
+            <td>4767.854448</td>
+            <td> 2674        </td>
+            <td> lower than average and std</td>
+            <td> 3293 </td>
+            <td> higher than average and std </td>
+            <td> 3516</td>
+            <td> higher than std and average</td>
+        </tr>
+        <tr>
+            <td><strong> Delicatessen </strong></td>
+            <td>1524.870455 </td>
+            <td>2820.105937 </td>
+            <td> 1338        </td>
+            <td> lower than average and std</td>
+            <td> 1776 </td>
+            <td> higher than average and but lower than std </td>
+            <td> 7844</td>
+            <td> higher than std and average</td>
+        </tr>
+        <tr>
+            <td><strong>Conclusion </strong></td>
+            <td colspan = 2> -----------------------------------    </td>
+            <td colspan = 2> This customer could be a restraunt  </td>
+            <td colspan = 2> This customer could be a grocery shop or retailer  </td>
+            <td colspan = 2> This customer could be a grocery shop or retailer   </td>
+        </tr>
+    </tbody>
+</table><ul>
 <li><strong>Customer 0 :</strong> This customer is buying high quantity of fresh items, milk and grocery so it can be a restraunt.</li>
 <li><strong>Customer 1 :</strong> This customer is buying high quantity of milk and grocery so it can be a dairy farm or grocery shop.</li>
 <li><strong>Customer 2 :</strong> This customer is buying high quantity of delicatesen and frozen item and significant quantity of grocercy and milk items so it can be a butchery shop or a grocery shop.</li>
@@ -14033,11 +14131,10 @@ OI7jOI7jOBPEJ1KO4ziO4ziO4zgTxCdSjuM4juM4juM4E8QnUo7jOI7jOI7jOBPEJ1KO4ziO4ziO
 <li><em>Milk</em> -&gt; <em>Grocery</em></li>
 </ul>
 <p>This confirms my suspicions that the <strong>Detergent_Paper</strong> is not relavant for identifying customer habit.</p>
-
-<pre><code>* Aside: Grocery could also be a possible not relavant feature as it is also showing some correlation. But its score is less than Detergent Paper hence i have choosen Detergent Paper.
-
-</code></pre>
-<p>The data of Detergent Paper is mostly linerly distributed in assending order.</p>
+<ul>
+<li>Aside: Grocery could also be a possible not relavant feature as it is also showing some correlation. But its score is less than Detergent Paper hence i have choosen Detergent Paper.</li>
+</ul>
+<p>The data of Detergent Paper is mostly normally distributed and most data lies within the range of 0 - 20000.</p>
 
 </div>
 </div>
@@ -19092,6 +19189,8 @@ Once you have performed this implementation, the dataset will be stored in the v
 
 <span class="c1"># Generate PCA results plot</span>
 <span class="n">pca_results</span> <span class="o">=</span> <span class="n">vs</span><span class="o">.</span><span class="n">pca_results</span><span class="p">(</span><span class="n">good_data</span><span class="p">,</span> <span class="n">pca</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">pca_results</span><span class="p">[</span><span class="s1">&#39;Explained Variance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -19101,6 +19200,21 @@ Once you have performed this implementation, the dataset will be stored in the v
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Dimension 1    0.4430
+Dimension 2    0.7068
+Dimension 3    0.8299
+Dimension 4    0.9311
+Dimension 5    0.9796
+Dimension 6    1.0000
+Name: Explained Variance, dtype: float64
+</pre>
+</div>
+</div>
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -19442,10 +19556,10 @@ JEmSJHUwMEmSJElSBwOTJEmSJHX4A2OpVupRACxiAAAAAElFTkSuQmCC
 <ul>
 <li>Total variance for 1st and 2nd dimension is 0.7068(0.4430 + 0.2638)</li>
 <li>Total variance for 1st 2nd, 3rd and 4th dimension is 0.9311(0.4430 + 0.2638 + 0.1231 + 0.1012)</li>
-<li><em>First Dimension :</em> It shows a positive corelation between <em>Fresh</em> and <em>Frozen</em> which means that if a customer buys fresh item he is also likely to buy frozen items also.</li>
-<li><em>Second Dimension :</em> It shows no positive corelation between any feature in the graph but if we consider negative correlation then according to graph if a cutomer buys a <em>Fresh</em> then he is unlikely to buy <em>Frozen</em> and <em>Delecateseen</em>. </li>
-<li><em>Third Dimension :</em> It shows high positive corelation between <em>Frozen</em> and <em>Delecatseen</em> feature in the graph but if we consider negative correlation then according to graph if a cutomer buys a <em>Frozen</em> then he is likely to buy <em>Delecateseen</em>. </li>
-<li><em>Third Dimension :</em> It shows high positive corelation between <em>Milk</em>, <em>Frozen</em> and <em>Delecatseen</em> feature in the graph but if we consider negative correlation then according to graph if a cutomer buys a <em>Frozen</em> then he is likely to buy <em>Delecateseen</em> and <em>Milk</em></li>
+<li><em>First Dimension :</em> In this we can see some corelation between <em>Fresh</em> and <em>Frozen</em> which means that if a customer buys fresh item he is also likely to buy frozen items also. We can also see corelation between <em>Milk</em>, <em>Grocery</em>, <em>Detergent paper</em> and <em>Delecatseen</em>. This dimension of the pca may represent grocery shops or retailers.</li>
+<li><em>Second Dimension :</em> It shows high corelation between <em>Fresh</em>, <em>Frozen</em> and <em>Delecateseen</em> which means that this set of customers are more likely to buy fresh items and thus can fall under restraunt.</li>
+<li><em>Third Dimension :</em> It shows high positive corelation between <em>Frozen</em> and <em>Delecatseen</em> feature in the graph which means that the customer is likely to buy them all together. Other then this we can see correlation between <em>Fresh</em> and <em>Detergent Paper</em>. Thus this sets of cutomers spends on these items.</li>
+<li><em>Forth Dimension :</em> It shows high positive corelation between <em>Frozen</em> and <em>Detergent Papers</em> feature in the graph ansd also between <em>Fresh</em> and <em>Delecateseen</em>. So this set of customers are likely to buy these four sets of items</li>
 </ul>
 
 </div>
@@ -19702,7 +19816,7 @@ JEmSJHUwMEmSJElSBwOTJEmSJHX4A2OpVupRACxiAAAAAElFTkSuQmCC
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0xa557f70&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x88ba630&gt;</pre>
 </div>
 
 </div>
@@ -20850,7 +20964,7 @@ ERH5MAZ1REREREREPoxBHRERERERkQ9jUEdEREREROTD/h+7kvAVpPtSdAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># DONE: Apply your clustering algorithm of choice to the reduced data </span>
@@ -20934,7 +21048,7 @@ ERH5MAZ1REREREREPoxBHRERERERkQ9jUEdEREREROTD/h+7kvAVpPtSdAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Display the results of the clustering from implementation</span>
@@ -21599,7 +21713,7 @@ ANB1/jcPJFsGsE/sdQAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># DONE: Inverse transform the centers</span>
@@ -21701,9 +21815,94 @@ ANB1/jcPJFsGsE/sdQAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<ul>
+<table>
+    <thead>
+        <tr>
+            <th colspan= '7' style="text-align: center;"> Guessing Segments enstablishments</th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr>
+            <td><strong> Feature </strong> </td>
+            <td><strong > Mean</strong> </td>
+            <td><strong> STD</strong> </td>
+            <td colspan = '2' style="text-align: center;"><strong> Segment 0 </strong> </td>
+            <td colspan = '2' style="text-align: center;"><strong> Segment 1 </strong> </td>
+         </tr>
+        <tr>
+            <td colspan = '3' >------------------------------------------------------------------</td>
+            <td>Value</td>
+            <td>Inference</td>
+            <td>Value</td>
+            <td>Inference</td>
+        </tr>
+        <tr>
+            <td><strong> Fresh </strong></td>
+            <td>12000.297727</td>
+            <td>12647.328865</td>
+            <td> 8953.0 </td>
+            <td> lower than average and std</td>
+            <td> 7057 </td>
+            <td> lower than average and std, Lower than 1st segment</td>
+         </tr>
+         <tr>
+            <td><strong> Milk </strong></td>
+            <td>5796.265909</td>
+            <td>7380.377175</td>
+            <td> 2114.0 </td>
+            <td> lower than average and std</td>
+            <td> 7837.0 </td>
+            <td> higher than average and std, Higher than 1st Segment </td>
+          </tr>
+        <tr>
+            <td><strong> Grocery </strong></td>
+            <td>7951.27727</td>
+            <td>9503.162829</td>
+            <td> 2765.0 </td>
+            <td> lower than average and std</td>
+            <td> 12219.0 </td>
+            <td> higher than average and std, Higher than 1st Segment</td>
+        </tr>
+        <tr>
+            <td><strong> Frozen </strong></td>
+            <td>3071.931818 </td>
+            <td>4854.673333</td>
+            <td> 2075.0  </td>
+            <td> lower than average and std</td>
+            <td> 870.0 </td>
+            <td> lower than average and std, Lower than 1st Segment </td>
+        </tr>
+        <tr>
+            <td><strong> Detergents_Paper </strong></td>
+            <td>2881.493182 </td>
+            <td>4767.854448</td>
+            <td> 2674        </td>
+            <td> lower than average and std</td>
+            <td> 4696.0 </td>
+            <td> higher than average and and little lower than std, but higher than 1st Segment </td>
+        </tr>
+        <tr>
+            <td><strong> Delicatessen </strong></td>
+            <td>1524.870455 </td>
+            <td>2820.105937 </td>
+            <td> 732.0       </td>
+            <td> lower than average and std</td>
+            <td> 962.0 </td>
+            <td> lower than average and std, Higher than 1st Segment </td>
+        </tr>
+        <tr>
+            <td><strong>Conclusion </strong></td>
+            <td colspan = 2> -----------------------------------    </td>
+            <td colspan = 2> This customer could be a grocery shop or retailer  </td>
+            <td colspan = 2> This customer could be a restraunt </td>
+        </tr>
+    </tbody>
+</table><ul>
 <li><strong>Segment 0 :</strong> This  segments of customer are buying very high quantity of grocery and a signficant quanitity of milk so it can be a dairy farm or grocery shops</li>
-<li><strong>Segment 1 :</strong> This segments of customer are buying high quantity of fresh, milk ,grocery and frozen items so it can be a restraunt.</li>
+<li><p><strong>Segment 1 :</strong> This segments of customer are buying high quantity of fresh, milk ,grocery and frozen items so it can be a restraunt.</p>
+</li>
+<li><p>Note: In the table mean and std is taken from original data which may vary with the good data as outliers have been removed but the variance may be ignored as only small sets of data has been removed.</p>
+</li>
 </ul>
 
 </div>
@@ -21720,9 +21919,117 @@ ANB1/jcPJFsGsE/sdQAAAABJRU5ErkJggg==
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Comparision of sample points and cluster centers : </strong></p>
+<table>
+    <thead>
+        <tr>
+            <th colspan= '9' style="text-align: center;"> Comparision of sample points and cluster centers </th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr>
+            <td><strong> Feature </strong> </td>
+            <td><strong > Segment 0</strong> </td>
+            <td><strong> Segment 1</strong> </td>
+            <td colspan = '2' style="text-align: center;"><strong> Customer 0 </strong> </td>
+            <td colspan = '2' style="text-align: center;"><strong> Customer 1 </strong> </td>
+            <td colspan = '2' style="text-align: center;"><strong> Customer 2 </strong> </td>
+        </tr>
+        <tr>
+            <td colspan = '3' >------------------------------------------------------------------</td>
+            <td>Value</td>
+            <td>Inference</td>
+            <td>Value</td>
+            <td>Inference</td>
+            <td>Value</td>
+            <td>Inference</td>
+        </tr>
+        <tr>
+            <td><strong> Fresh </strong></td>
+            <td>3552.0</td>
+            <td>8953.0</td>
+            <td> 12669 </td>
+            <td>It is closer to segment 1 than segment 0, Hence it might belong to segment 1</td>
+            <td> 7057 </td>
+            <td> It is closer to segment 1 than segment 0, Hence it might belong to segment 1</td>
+            <td> 6353 </td>
+            <td> It is closer to segment 1 than segment 0, Hence it might belong to segment 1</td>
+        </tr>
+         <tr>
+            <td><strong> Milk </strong></td>
+            <td>7837.0  </td>
+            <td>2765.0</td>
+            <td> 9656 </td>
+            <td> It is closer to segment 0 than segment 1, Hence it might belong to segment 0</td>
+            <td> 9810 </td>
+            <td> It is closer to segment 0 than segment 1, Hence it might belong to segment 0</td>
+            <td> 8808 </td>
+            <td> It is closer to segment 0 than segment 1, Hence it might belong to segment 0</td>
+        </tr>
+        <tr>
+            <td><strong> Grocery </strong></td>
+            <td>12219.0 </td>
+            <td>9503.162829</td>
+            <td> 7561 </td>
+            <td> It is closer to segment 1 than segment 0, Hence it might belong to segment 1</td>
+            <td> 9568 </td>
+            <td> It is closer to segment 1 than segment 0, Hence it might belong to segment 1</td>
+            <td> 7684 </td>
+            <td> It is closer to segment 1 than segment 0, Hence it might belong to segment 1</td>
+        </tr>
+        <tr>
+            <td><strong> Frozen </strong></td>
+            <td>870.0   </td>
+            <td>2075.0</td>
+            <td> 214     </td>
+            <td>It is closer to segment 0 than segment 1, Hence it might belong to segment 0</td>
+            <td> 1762 </td>
+            <td> It is closer to segment 1 than segment 0, Hence it might belong to segment 1 </td>
+            <td> 2405</td>
+            <td> It is closer to segment 1 than segment 0, Hence it might belong to segment 1</td>
+        </tr>
+        <tr>
+            <td><strong> Detergents_Paper </strong></td>
+            <td>4696.0  </td>
+            <td>353.0</td>
+            <td> 2674        </td>
+            <td> It is closer to segment 0 than segment 1, Hence it might belong to segment 0</td>
+            <td> 3293 </td>
+            <td>It is closer to segment 0 than segment 1, Hence it might belong to segment 0</td>
+            <td> 3516</td>
+            <td> It is closer to segment 0 than segment 1, Hence it might belong to segment 0</td>
+        </tr>
+        <tr>
+            <td><strong> Delicatessen </strong></td>
+            <td>962.0   </td>
+            <td>732.0 </td>
+            <td> 1338        </td>
+            <td> It is closer to segment 0 than segment 1, Hence it might belong to segment 0</td>
+            <td> 1776 </td>
+            <td> It is closer to segment 0 than segment 1, Hence it might belong to segment 0</td>
+            <td> 7844</td>
+            <td> It is closer to segment 0 than segment 1, Hence it might belong to segment 0</td>
+        </tr>
+        <tr>
+            <td><strong>Conclusion </strong></td>
+            <td colspan = 2> -----------------------------------    </td>
+            <td colspan = 2> This customer is closer to segment 0 than segment 1 hence would belong to segment 0</td>
+            <td colspan = 2>This customer is closer to segment 0 than segment 1 hence would belong to segment 0</td>
+            <td colspan = 2> This customer is closer to segment 0 than segment 1 hence would belong to segment 0</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Display the predictions</span>
@@ -21760,9 +22067,9 @@ Sample point 2 predicted to be in Cluster 0
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong> *</p>
 <ul>
-<li><strong>Customer 0 :</strong> This customer is predicted to be a grocery which is not in line with my earlier guess, i guessed it to be restraunt.</li>
-<li><strong>Customer 1 :</strong> This customer is predicted to be a grocery which is what i guessed i.e. i gussed it to be a dairy farm or grocery shop.</li>
-<li><strong>Customer 2 :</strong> This customer is predicted to be a grocercy, I guessed it to be a butchery shop or grocercy shop, so this is also inline with my guess.</li>
+<li><strong>Customer 0 :</strong> This customer is predicted to be a grocery which is not in line with my earlier guess, i guessed it to be restraunt. But on comparing cluster centers and features of this customer i also predicted it to be in cluster 0 rather than in cluster 1</li>
+<li><strong>Customer 1 :</strong> This customer is predicted to be a grocery which is what i guessed i.e. i gussed it to be a dairy farm or grocery shop. Also comparing cluster centers with the features of this customer, cross-verifies my intution.</li>
+<li><strong>Customer 2 :</strong> This customer is predicted to be a grocercy, I guessed it to be a butchery shop or grocercy shop, so this is also inline with my guess. Also comparing cluster centers with the features of this customer, cross-verifies my intution.</li>
 </ul>
 
 </div>
@@ -21807,7 +22114,25 @@ Sample point 2 predicted to be in Cluster 0
 <ul>
 <li>The change in delivery system of services from 5 days a week to 3 days would affect the distributor adversely as we can see that his customers are either a restraunt owners or grocery shop owners. Now both of these segments of customer requires fesh items. </li>
 <li>Though a grocery shop would not be affected much by this change as a day or two old grocery can still be sold so it can take it in a positive way</li>
-<li>But the other segment is Restraunt, which requires continuous supply of fresh products otherwise no one will eat food from that restraunt hence it would be very bad idea to change delivery services for this segments of customer.</li>
+<li><p>But the other segment is Restraunt, which requires continuous supply of fresh products otherwise no one will eat food from that restraunt hence it would be very bad idea to change delivery services for this segments of customer.</p>
+</li>
+<li><p>If we were to run A/B test on these segments, we could do the following.</p>
+<ul>
+<li>For Segment 0 <ul>
+<li>Take a sample from segment 0, large enough to get statistically signifiacnt results.</li>
+<li>Devide them in A and B group.</li>
+<li>A group will be given changed delevery time i.e. 3 days a week delivery.</li>
+<li>B group will be controlled group and will have same delivery time i.e 5 days a week.</li>
+<li>The test will be of one week and at the end if that week we will take feedback from the customers belonging to both the groups</li>
+<li>If the feed back we recieve are good from group A as compared to group B we can change our delivery time for this whole segment.</li>
+</ul>
+</li>
+<li>For segment 1 :<ul>
+<li>We can do the same as is done with segment 0 and then according to the results we can check whether it is good to change the delivery time ot not.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -21834,7 +22159,7 @@ Sample point 2 predicted to be in Cluster 0
 I think if we only need to determine how we would deliver the item to new customers, we can do the same by simply using our trained unsupervised cluster. We would simply normalize the data, transform it using pca and then predicts its cluster and would then choose our delivery system.
 But if we were to use supervised learner what we can do here is as follows :</p>
 <ul>
-<li>we have two segments of data and our target variable will be the which delivery system to choose.</li>
+<li>we have two segments of data and our target variable will be " which delivery system to choose ".</li>
 <li>we can simply use Decision Tree for this case to determine which delivery will suit the new customer</li>
 </ul>
 
@@ -21854,7 +22179,7 @@ But if we were to use supervised learner what we can do here is as follows :</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Display the clustering results based on &#39;Channel&#39; data</span>
