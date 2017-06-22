@@ -8,6 +8,8 @@ A wholesale distributor in Lisbon, Portugal  recently tested a change to their d
 
 *My goal was to  to find what types of customers they have to help them make better, more informed business decisions in the future. I have used unsupervised learning techniques to see if any similarities exist between customers, and how to best segment customers into distinct categories.*
 
+![Creating Customer Segments](https://github.com/Rajat-dhyani/creating_customer_segments/blob/master/RajatDhyani-CustomerSegment.jpg)
+
 ## Project Highlights
 *This project is designed to give me a hands-on experience with unsupervised learning and work towards developing conclusions for a potential client on a real-world dataset. Many companies today collect vast amounts of data on customers and clients, and have a strong desire to understand the meaningful relationships hidden in their customer base. Being equipped with this information can assist a company engineer future products and services that best satisfy the demands or needs of their customers.*
 
