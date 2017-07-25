@@ -1,4 +1,4 @@
-# Creating Cutomer Segments
+# Creating Customer Segments
 *Udacity - Machine learning Nano Degree Program : Project-3*
 
 ## Project Overview
@@ -13,6 +13,11 @@ A wholesale distributor in Lisbon, Portugal  recently tested a change to their d
 ## Project Highlights
 *This project is designed to give me a hands-on experience with unsupervised learning and work towards developing conclusions for a potential client on a real-world dataset. Many companies today collect vast amounts of data on customers and clients, and have a strong desire to understand the meaningful relationships hidden in their customer base. Being equipped with this information can assist a company engineer future products and services that best satisfy the demands or needs of their customers.*
 
+**Achievements:**
+* Preprocessed the data using PCA
+* Clustering algorithm used : K-mean and Gaussian mixture model
+* Achieved silhouette score of 0.4223 using Gaussian mixture model
+
 Things i have learnt by completing this project:
 * How to apply preprocessing techniques such as feature scaling and outlier detection.
 * How to interpret data points that have been scaled, transformed, or reduced from PCA.
@@ -24,6 +29,9 @@ Things i have learnt by completing this project:
 * <strong> Project 0 : </strong> *[Titanic Survivals Prediction](https://github.com/Rajat-dhyani/titanic_survival)*
 * <strong> Project 1 : </strong> *[Boston's Houses Prediction](https://github.com/Rajat-dhyani/boston_housing)*
 * <strong> Project 2 : </strong> *[Charity Donors Prediction](https://github.com/Rajat-dhyani/charity_donors)*
+* <strong> Project 4 : </strong> *[Smart Cab](https://github.com/Rajat-dhyani/smart-cab)*
+* <strong> Project 5 : </strong> *[ImageNetBot](https://github.com/Rajat-dhyani/ImageNetBot)*
+* <strong> Project 6 : </strong> *[Stock Price Predictor](https://github.com/Rajat-dhyani/Stock-Price-Predictor/)*
 
 ## Software and Libraries
 This project uses the following software and Python libraries:
